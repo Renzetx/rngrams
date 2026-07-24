@@ -1699,6 +1699,7 @@ class Message(Object, Update):
         protect_content: bool = None,
         allow_paid_broadcast: bool = None,
         message_effect_id: int = None,
+        effect_id: int = None,
         reply_parameters: "types.ReplyParameters" = None,
         reply_markup: Union[
             "types.InlineKeyboardMarkup",
@@ -1797,6 +1798,8 @@ class Message(Object, Update):
             quote,
             reply_to_message_id,
         )
+
+        message_effect_id = message_effect_id if message_effect_id is not None else effect_id
 
         return await self._client.send_message(
             chat_id=self.chat.id,
