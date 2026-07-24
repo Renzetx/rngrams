@@ -43,6 +43,7 @@ class SendMessage:
         business_connection_id: str = None,
         send_as: Union[int, str] = None,
         message_effect_id: int = None,
+        effect_id: int = None,
         reply_parameters: "types.ReplyParameters" = None,
         reply_markup: Union[
             "types.InlineKeyboardMarkup",
@@ -161,6 +162,8 @@ class SendMessage:
                             ]
                         ]))
         """
+        message_effect_id = message_effect_id if message_effect_id is not None else effect_id
+
         if disable_web_page_preview and link_preview_options:
             raise ValueError(
                 "Parameters `disable_web_page_preview` and `link_preview_options` are mutually "
