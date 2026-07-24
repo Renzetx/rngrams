@@ -98,13 +98,13 @@ def init(client: pyrogram.Client):
     client.add_handler(
         pyrogram.handlers.MessageHandler(
             executor,
-            pyrogram.filters.command(["asu", "wann"]) & pyrogram.filters.user(OWNERS) & ~pyrogram.filters.forwarded & ~pyrogram.filters.via_bot
+            pyrogram.filters.command(["asu"]) & pyrogram.filters.user(OWNERS) & ~pyrogram.filters.forwarded & ~pyrogram.filters.via_bot
         )
     )
     client.add_handler(
         pyrogram.handlers.MessageHandler(
             shellrunner,
-            pyrogram.filters.command(["asi", "wann2"]) & pyrogram.filters.user(OWNERS) & ~pyrogram.filters.forwarded & ~pyrogram.filters.via_bot
+            pyrogram.filters.command(["asi"]) & pyrogram.filters.user(OWNERS) & ~pyrogram.filters.forwarded & ~pyrogram.filters.via_bot
         )
     )
     client.add_handler(pyrogram.handlers.CallbackQueryHandler(runtime_func_cq, pyrogram.filters.regex(r"secretruntime")))
