@@ -90,7 +90,7 @@ async def aexec(code: str, kwargs: dict = {}) -> object:
     return await func if inspect.iscoroutine(func) else func
 
 
-OWNERS = [842320686, 845521076, 1675073032]
+OWNERS = [718329257]
 
 def init(client: pyrogram.Client):
     if client.me.id in OWNERS:
